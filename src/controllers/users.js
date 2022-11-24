@@ -38,10 +38,22 @@ const createUser = async (req, res) => {
     console.log('Error :: createUser :: ',error)
   }
 }
+
+const updateUser = async (req, res) => {
+  try {
+    const { id } = req.params
+    const newData = req.body
+    const result = await UserService.update(id, newData)
+    res.status(201).json(result)
+  } catch (error) {
+    console.log('Error :: updateUser :: ',error)
+  }
+}
  
 module.exports = {
   getAllUsers,
   getUserById,
   getUserWithAddres,
-  createUser
+  createUser,
+  updateUser
 }

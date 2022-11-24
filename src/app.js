@@ -9,8 +9,6 @@ const app = express()
 
 app.use(express.json())
 
-console.log(process)
-
 const PORT = process.env.PORT
 
 db.authenticate()

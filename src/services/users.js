@@ -52,6 +52,14 @@ class UserService {
       throw(error)
     }
   }
+
+  static async update(id, newData) {
+    try {
+      return await Users.update(newData, { where: { id } })
+    } catch (error) {
+      throw(error)
+    }
+  }
 }
 
 module.exports = UserService
