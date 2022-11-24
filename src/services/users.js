@@ -44,6 +44,14 @@ class UserService {
       throw(error)
     }
   }
+
+  static async add(userData) {
+    try {
+      return await Users.create(userData)
+    } catch (error) {
+      throw(error)
+    }
+  }
 }
 
 module.exports = UserService

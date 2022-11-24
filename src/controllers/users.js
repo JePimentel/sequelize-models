@@ -28,9 +28,20 @@ const getUserWithAddres = async (req, res) => {
     console.log('Error :: getUserWithAddres :: controller :: ', error)
   }
 }
+
+const createUser = async (req, res) => {
+  try {
+    const userData = req.body
+    const result = await UserService.add(userData)
+    res.status(201).json(result)
+  } catch (error) {
+    console.log('Error :: createUser :: ',error)
+  }
+}
  
 module.exports = {
   getAllUsers,
   getUserById,
-  getUserWithAddres
+  getUserWithAddres,
+  createUser
 }
